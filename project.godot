@@ -11,6 +11,13 @@ config_version=5
 [application]
 
 config/name="Magic Platformer"
-run/main_scene="res://Main/main.tscn"
+run/main_scene="res://Menu/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=640
+window/size/resizable=false
+window/size/borderless=true
