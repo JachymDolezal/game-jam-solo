@@ -48,9 +48,9 @@ func _physics_process(delta):
 	# Handle Dash.
 	if Input.is_action_just_released("Dash"):
 		dash_pressed = false
-		print(dash.dash_cooldown.time_left)
+		#print(dash.dash_cooldown.time_left)
 		if dash.is_dash_ready():
-			print("prep for dash")
+			#print("prep for dash")
 			dash.start_dash(dash_duration)
 			cast_dash()
 			input_direction = Input.get_vector("Left", "Right", "Up", "Down")
@@ -71,7 +71,7 @@ func _physics_process(delta):
 	
 	if dash.is_dashing():
 		if input_direction == Vector2(0, -1):
-			print("dash up")
+			#print("dash up")
 			velocity = input_direction * 400
 			velocity.normalized()
 		else:
