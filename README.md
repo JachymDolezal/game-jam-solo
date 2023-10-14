@@ -21,3 +21,6 @@ This game combines endless platformer with unpredictable magic. The player is tr
 - [ ] Add animations
 - [ ] Add custom assets
 - [ ] Polish and deploy
+
+## Diagram of Nodes and Scenes
+![Alt text](images/image.png)
