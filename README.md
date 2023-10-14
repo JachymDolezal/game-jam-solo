@@ -11,13 +11,16 @@ This game combines endless platformer with unpredictable magic. The player is tr
 - [x] Create the player (Hour 2)
 - [x] Create demo level (Hour 2.5)
 - [x] Create obstacles spawning
+- [ ] Add projectiles
+- [ ] Add Dangerous Obstacles
+- [ ] Add Object Spawnings
 - [ ] Implement StickToWall
 - [x] Implement Dash (Hour 3)
 - [ ] Implement Spell
 - [x] Implement obstacles falling from the sky (Hour 4)
 - [x] Add menu (Hour 2)
 - [ ] Add sounds
-- [ ] Add music
+- [x] Add music
 - [ ] Add animations
 - [ ] Add custom assets
 - [ ] Polish and deploy

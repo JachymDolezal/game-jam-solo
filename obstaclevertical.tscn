@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://56xkaid6bwv6"]
+
+[ext_resource type="Script" path="res://obstacle.gd" id="1_404b3"]
+[ext_resource type="Texture2D" uid="uid://cqfpvnb5pfexe" path="res://Assets/Obstacles/obstacle1.png" id="2_l6smw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vfhj"]
+size = Vector2(64, 192)
+
+[node name="ObstacleVertical" type="RigidBody2D"]
+position = Vector2(-64, 0)
+mass = 0.02
+inertia = 1000.0
+gravity_scale = 0.01
+lock_rotation = true
+freeze = true
+script = ExtResource("1_404b3")
+
+[node name="Despawn" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7vfhj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(1, 3)
+texture = ExtResource("2_l6smw")

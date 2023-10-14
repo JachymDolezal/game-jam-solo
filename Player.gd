@@ -4,13 +4,13 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const dash_duration = 0.25
+const dash_duration = 0.1
 const dash_cooldown = 1.5
-const dash_speed = 500
+const dash_speed = 700
 var dash_pressed = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1000
 var is_dashing = false
 var dash_ready = true
 var actual_speed = SPEED
