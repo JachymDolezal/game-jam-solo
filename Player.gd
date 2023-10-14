@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 const dash_duration = 0.2
 const dash_cooldown = 2
 const dash_speed = 600
+var dash_pressed = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -36,17 +37,22 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("Up") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	# Handle Dash
 	if Input.is_action_just_pressed("Dash"):
+		velocity.x = 0
+		dash_pressed = true
+	
+	# Handle Dash.
+	if Input.is_action_just_released("Dash"):
+		dash_pressed = false
 		print(dash.dash_cooldown.time_left)
 		if dash.is_dash_ready():
 			print("prep for dash")
 			dash.start_dash(dash_duration)
 			cast_dash()
-			input_direction = Input.get_vector("Arrow_left", "Arrow_right", "Arrow_up", "Arrow_down")
+			input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 			dash.start_cooldown(dash_cooldown)
 
 	# modify speed based on dash
@@ -71,9 +77,10 @@ func _physics_process(delta):
 			velocity = input_direction * dash_speed
 			velocity.normalized()
 	else:
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if not dash_pressed:
+			if direction:
+				velocity.x = direction * SPEED
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
