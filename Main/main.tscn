@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvmij54nu7egf"]
+[gd_scene load_steps=6 format=3 uid="uid://bvmij54nu7egf"]
 
 [ext_resource type="PackedScene" uid="uid://cdmssg6gxil4e" path="res://Player.tscn" id="1_neau2"]
 [ext_resource type="PackedScene" uid="uid://bex55oi201ynx" path="res://floor.tscn" id="2_jgu68"]
+[ext_resource type="PackedScene" uid="uid://2kvjleegv40p" path="res://obstacle_1.tscn" id="3_qivix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkvr"]
 size = Vector2(8, 640)
@@ -27,3 +28,21 @@ shape = SubResource("RectangleShape2D_wbkvr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-4, 320)
 shape = SubResource("RectangleShape2D_nq2by")
+
+[node name="Obstacle1" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(376, 400)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(296, 456)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(432, 320)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(304, 224)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(192, 136)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("3_qivix")]
+position = Vector2(88, 88)
