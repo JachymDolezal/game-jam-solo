@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://duecgwqwa52ak"]
+
+[ext_resource type="Script" path="res://Dash.gd" id="1_jyjop"]
+
+[node name="Dash" type="Node2D"]
+script = ExtResource("1_jyjop")
+
+[node name="DurationTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
