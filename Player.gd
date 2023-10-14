@@ -4,9 +4,9 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const dash_duration = 0.2
-const dash_cooldown = 2
-const dash_speed = 600
+const dash_duration = 0.25
+const dash_cooldown = 1.5
+const dash_speed = 500
 var dash_pressed = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -40,9 +40,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_just_pressed("Dash"):
-		velocity.x = 0
-		dash_pressed = true
+	if dash.is_dash_ready():
+		if Input.is_action_just_pressed("Dash"):
+			velocity.x = 0
+			dash_pressed = true
 	
 	# Handle Dash.
 	if Input.is_action_just_released("Dash"):

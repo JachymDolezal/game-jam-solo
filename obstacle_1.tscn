@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://2kvjleegv40p"]
+[gd_scene load_steps=4 format=3 uid="uid://2kvjleegv40p"]
 
+[ext_resource type="Script" path="res://obstacle.gd" id="1_61i4r"]
 [ext_resource type="Texture2D" uid="uid://cqfpvnb5pfexe" path="res://Assets/Obstacles/obstacle1.png" id="1_x0qks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbmml"]
@@ -8,10 +9,15 @@ size = Vector2(64, 64)
 [node name="RigidBody2D" type="RigidBody2D"]
 position = Vector2(-64, 0)
 mass = 0.02
+inertia = 1000.0
 gravity_scale = 0.03
+lock_rotation = true
+script = ExtResource("1_61i4r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wbmml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x0qks")
+
+[node name="Despawn" type="Timer" parent="."]
