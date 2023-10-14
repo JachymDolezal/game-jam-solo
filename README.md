@@ -6,8 +6,8 @@ This game combines endless platformer with unpredictable magic. The player is tr
 
 ## TODO
 
-- [x] Plan the mechanics
-- [ ] Create diagram of nodes and scenes
+- [x] Plan the mechanics (Hour 1)
+- [x] Create diagram of nodes and scenes (Hour 1.5)
 - [ ] Create the player
 - [ ] Create demo level
 - [ ] Create obstacles spawning
