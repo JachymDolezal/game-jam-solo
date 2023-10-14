@@ -8,14 +8,14 @@ This game combines endless platformer with unpredictable magic. The player is tr
 
 - [x] Plan the mechanics (Hour 1)
 - [x] Create diagram of nodes and scenes (Hour 1.5)
-- [ ] Create the player
-- [ ] Create demo level
-- [ ] Create obstacles spawning
+- [x] Create the player (Hour 2)
+- [x] Create demo level (Hour 2.5)
+- [x] Create obstacles spawning
 - [ ] Implement StickToWall
-- [ ] Implement Dash
+- [x] Implement Dash (Hour 3)
 - [ ] Implement Spell
-- [ ] Implement obstacles falling from the sky
-- [ ] Add menu
+- [x] Implement obstacles falling from the sky (Hour 4)
+- [x] Add menu (Hour 2)
 - [ ] Add sounds
 - [ ] Add music
 - [ ] Add animations
