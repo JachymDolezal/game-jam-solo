@@ -4,6 +4,22 @@
 
 This game combines endless platformer with unpredictable magic. The player is trying to survive as long as possible, jumping to falling blocks and avoiding obstacles. The player can move with jumping, he can stick to object's walls and can dash even through objects, if they are small enough. The player can also use his special ability, which can cast a spell. The spell is random and can be either good or bad.
 
+## Controls
+Space - Jump
+A - Move left
+D - Move right
+S - look down
+W - look up
+Shift - Dash (on press player will signal the direction, on release player will dash)
+J - Cast spell
+
+## Player Mechanics
+
+- Player can jump
+- Player can dash into 8 directions
+- Player can slide and jump from walls
+- Player can cast a spell (todo)
+
 ## TODO
 
 - [x] Plan the mechanics (Hour 1)
