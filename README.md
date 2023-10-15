@@ -12,9 +12,9 @@ This game combines endless platformer with unpredictable magic. The player is tr
 - [x] Create demo level (Hour 2.5)
 - [x] Create obstacles spawning
 - [ ] Add projectiles
-- [ ] Add Dangerous Obstacles
-- [ ] Add Object Spawnings
-- [ ] Implement StickToWall
+- [x] Add Dangerous Obstacles
+- [x] Add Object Spawnings
+- [x] Implement StickToWall
 - [x] Implement Dash (Hour 3)
 - [ ] Implement Spell
 - [x] Implement obstacles falling from the sky (Hour 4)
