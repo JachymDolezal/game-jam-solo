@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqagcl1kqv7ns"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_l0dno"]
+[ext_resource type="Texture2D" uid="uid://cqfpvnb5pfexe" path="res://Assets/Obstacles/obstacle1.png" id="2_8eet6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uieq3"]
+size = Vector2(14, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl7xb"]
+size = Vector2(17, 10)
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_l0dno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uieq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.96046e-08, 2.38419e-07)
+scale = Vector2(0.21875, 0.125)
+texture = ExtResource("2_8eet6")
+
+[node name="OnImpact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnImpact"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_yl7xb")
+
+[connection signal="body_entered" from="OnImpact" to="." method="_on_on_impact_body_entered"]

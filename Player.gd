@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @onready var dash = $Dash
+@onready var animation = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const dash_duration = 0.1
+const dash_duration = 0.05
 const dash_cooldown = 1.5
-const dash_speed = 700
+const dash_speed = 600
 var dash_pressed = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,7 +30,16 @@ func check_if_stick():
 	pass
 
 func _ready():
+	animation.play("Idle")
 	var actual_speed = SPEED
+	
+	var obstacle = get_tree().get_root().get_node("obstacle_1.tscn/RigidBody2D")
+	print(obstacle)
+	if obstacle:
+		obstacle.player_contact.connect(_on_player_contact, 3)
+
+func _on_player_contact():
+	print("jump reseted")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -37,14 +47,32 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if (Input.is_action_just_pressed("Jump") and is_on_floor()) and !Game.can_wall_jump:
+
 		velocity.y = JUMP_VELOCITY
+	
+	if Game.can_wall_jump:
+		velocity.y = 30
+		if Input.is_action_just_pressed("Jump"):
+			Game.can_wall_jump = false
+			velocity.y = JUMP_VELOCITY
 	
 	if dash.is_dash_ready():
 		if Input.is_action_just_pressed("Dash"):
 			velocity.x = 0
 			dash_pressed = true
+		animation.play("DashReady")
+		print("player orange")
+		animation.play("Idle")
+
+	else:
+		animation.play("Dash")
+		print("player white")
 	
+	# if Left Right or Up Down is pressed, set the input direction set variable Game.is_jumping to true
+	if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right") or Input.is_action_just_pressed("Up") or Input.is_action_just_pressed("Down"):
+		Game.can_wall_jump = false
+
 	# Handle Dash.
 	if Input.is_action_just_released("Dash"):
 		dash_pressed = false

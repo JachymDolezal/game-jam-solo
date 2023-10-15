@@ -2,7 +2,7 @@ extends Camera2D
 
 
 
-var scroll_speed = 30  # Adjust the scrolling speed as needed
+var scroll_speed = 40  # Adjust the scrolling speed as needed
 
 func _process(delta):
 	# Get the current camera position

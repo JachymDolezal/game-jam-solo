@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmq48j5qm8jxx"]
+
+[ext_resource type="Script" path="res://red_obstacle.gd" id="1_5qigp"]
+[ext_resource type="Texture2D" uid="uid://bbugqqvo1afn0" path="res://Assets/Obstacles/obstacledeadly.png" id="2_mob7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbmml"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8voi"]
+size = Vector2(69, 56)
+
+[node name="RedObstacle" type="RigidBody2D"]
+position = Vector2(-64, 0)
+mass = 0.02
+inertia = 1000.0
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+script = ExtResource("1_5qigp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wbmml")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mob7w")
+
+[node name="Despawn" type="Timer" parent="."]
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+shape = SubResource("RectangleShape2D_c8voi")
+
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_jump_reset_body_entered" flags=18]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]

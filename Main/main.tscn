@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvmij54nu7egf"]
+[gd_scene load_steps=9 format=3 uid="uid://bvmij54nu7egf"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_g4mji"]
 [ext_resource type="PackedScene" uid="uid://cdmssg6gxil4e" path="res://Player.tscn" id="1_neau2"]
 [ext_resource type="PackedScene" uid="uid://bex55oi201ynx" path="res://floor.tscn" id="2_jgu68"]
 [ext_resource type="PackedScene" uid="uid://2kvjleegv40p" path="res://obstacle_1.tscn" id="3_qivix"]
-[ext_resource type="PackedScene" uid="uid://56xkaid6bwv6" path="res://obstaclevertical.tscn" id="4_07cw3"]
 [ext_resource type="PackedScene" uid="uid://btmxu6731vkjv" path="res://obstacle_spawner.tscn" id="6_o5wgd"]
 [ext_resource type="PackedScene" uid="uid://b6oqda2m2kgq5" path="res://window.tscn" id="7_fqq2i"]
 
@@ -16,6 +15,8 @@ size = Vector2(8, 1152)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_g4mji")
+metadata/_edit_vertical_guides_ = [-656.0]
+metadata/_edit_horizontal_guides_ = [296.0]
 
 [node name="Player" parent="." instance=ExtResource("1_neau2")]
 position = Vector2(238, 568)
@@ -35,44 +36,32 @@ position = Vector2(-4, 64)
 shape = SubResource("RectangleShape2D_nq2by")
 
 [node name="Obstacle1" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(376, 384)
-gravity_scale = 0.0
+position = Vector2(384, 440)
+inertia = 15.85
 lock_rotation = false
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(296, 480)
+position = Vector2(296, 488)
 inertia = 10.0
-gravity_scale = 0.0
 lock_rotation = false
 freeze_mode = 1
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(432, 280)
-freeze = true
+position = Vector2(168, 400)
 
 [node name="RigidBody2D4" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(248, 224)
-freeze = true
+position = Vector2(328, 296)
 freeze_mode = 1
 
 [node name="RigidBody2D5" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(88, 224)
-freeze = true
-
-[node name="RigidBody2D6" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(152, -32)
-freeze = true
-
-[node name="RigidBody2D7" parent="." instance=ExtResource("3_qivix")]
-position = Vector2(256, -144)
-freeze = true
-
-[node name="ObstacleVertical" parent="." instance=ExtResource("4_07cw3")]
-position = Vector2(136, -360)
+position = Vector2(80, 296)
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource("6_o5wgd")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Window" parent="." instance=ExtResource("7_fqq2i")]
-position = Vector2(-4, 160)
+position = Vector2(0, 368)
+
+[node name="ObstacleSpawner2" parent="." instance=ExtResource("6_o5wgd")]
+position = Vector2(-104, 40)

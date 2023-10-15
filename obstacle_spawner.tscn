@@ -4,3 +4,9 @@
 
 [node name="ObstacleSpawner" type="Node2D"]
 script = ExtResource("1_u2rcp")
+
+[node name="SpawnCooldown" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Spawn Bullet Swarm" type="Timer" parent="."]
