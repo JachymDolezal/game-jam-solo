@@ -20,10 +20,14 @@ This game combines endless platformer with unpredictable magic. The player is tr
 - [x] Implement obstacles falling from the sky (Hour 4)
 - [x] Add menu (Hour 2)
 - [ ] Add sounds
-- [x] Add music
+- [x] Add custom music
 - [ ] Add animations
 - [ ] Add custom assets
 - [ ] Polish and deploy
+
+## Afterthoughts
+
+I did not manage to implement all visual and audio assets, but I managed to implement almost all mechanics except the random spell casting. The initial version therefore lacks certain features. The game will be polished in the next releases.
 
 ## Diagram of Nodes and Scenes
 ![Alt text](images/image.png)
